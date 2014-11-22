@@ -102,6 +102,7 @@ public final class Settings {
     public static final String ACTION_LOCATION_SOURCE_SETTINGS =
             "android.settings.LOCATION_SOURCE_SETTINGS";
 
+    public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     /**
      * Activity Action: Show settings to allow configuration of wireless controls
      * such as Wi-Fi, Bluetooth and Mobile networks.
