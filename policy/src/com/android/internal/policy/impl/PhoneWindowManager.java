@@ -1603,7 +1603,26 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
                     Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT,
                     UserHandle.USER_CURRENT);
-
+                    
+                    // navigation bar height
++            int mNavigationBarHeight = Settings.System.getInt(resolver,
++                    Settings.System.NAVIGATION_BAR_HEIGHT, 48);
++            mNavigationBarHeightForRotation[mPortraitRotation] =
++                    mNavigationBarHeightForRotation[mUpsideDownRotation] =
++                            mNavigationBarHeight * DisplayMetrics.DENSITY_DEVICE
++                                    / DisplayMetrics.DENSITY_DEFAULT;
++            mNavigationBarHeightForRotation[mLandscapeRotation] =
++                    mNavigationBarHeightForRotation[mSeascapeRotation] =
++                            mNavigationBarHeight * DisplayMetrics.DENSITY_DEVICE
++                                    / DisplayMetrics.DENSITY_DEFAULT;
++            mNavigationBarWidthForRotation[mPortraitRotation] =
++                    mNavigationBarWidthForRotation[mUpsideDownRotation] =
++                            mNavigationBarWidthForRotation[mLandscapeRotation] =
++                                    mNavigationBarWidthForRotation[mSeascapeRotation] =
++                                            (mNavigationBarHeight - 6)
++                                                    * DisplayMetrics.DENSITY_DEVICE
++                                                    / DisplayMetrics.DENSITY_DEFAULT;
++
             // Configure wake gesture.
             boolean wakeGestureEnabledSetting = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.WAKE_GESTURE_ENABLED, 0,
