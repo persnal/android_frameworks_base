@@ -149,6 +149,7 @@ public final class Settings {
     public static final String ACTION_ACCESSIBILITY_SETTINGS =
             "android.settings.ACCESSIBILITY_SETTINGS";
 
+    public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     /**
      * Activity Action: Show settings to allow configuration of security and
      * location privacy.
